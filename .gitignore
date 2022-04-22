@@ -1,0 +1,11 @@
+# node
+node_modules/
+package-lock.json
+yarn.lock
+
+# env variables
+.env
+
+# tests
+hello_world
+hello_world_1
