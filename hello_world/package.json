@@ -1,0 +1,24 @@
+{
+  "name": "hello_world",
+  "version": "1.0.0",
+  "description": "A simple hello world project on MASSA.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests",
+    "asbuild:untouched": "asc assembly/index.ts --target debug",
+    "asbuild:optimized": "asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@as-pect/cli": "^6.2.4",
+    "assemblyscript": "^0.19.23",
+    "json-as": "^0.2.6",
+    "massa-sc-scripts": "^4.0.1",
+    "massa-sc-std": "^3.1.2"
+  },
+  "dependencies": {
+    "@assemblyscript/loader": "^0.19.23"
+  }
+}
