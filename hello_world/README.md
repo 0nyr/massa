@@ -19,3 +19,9 @@
 Compile our `helloworld.ts`: `npx massa-sc-scripts build-sc assembly/helloworld.ts`
 
 > If using this repository, just run `npm install` inside `hello_world/` subdirectory.
+
+### testing
+
+Download the MASSA tester [here | GitHub](https://github.com/massalabs/massa-sc-tester)
+
+`cargo run ../../massa/hello_world/build/helloworld.wasm`

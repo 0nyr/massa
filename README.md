@@ -6,6 +6,13 @@ As explained by the MASSA doc: "Massa is a truly decentralized blockchain contro
 
 [MASSA doc, latest](https://massa.readthedocs.io/en/latest/index.html)
 
+##### hackaton
+
+[doc hackaton](https://massa.readthedocs.io/en/latest/hackathon.html)
+
+[MASSA Web3 lib](https://github.com/massalabs/massa-web3)
+
+
 ## Install tools
 
 First, install general tools for `node` dev:
