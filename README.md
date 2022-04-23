@@ -28,3 +28,15 @@ Once the necessary tooling have been installed, install MASSA specific libs. We 
 `npm install --save-dev @as-pect/cli massa-sc-std massa-sc-scripts` using `npm` (recommended).
 
 `yarn add @as-pect/cli massa-sc-std massa-sc-scripts --dev` using `yarn`
+
+## Deploy commands
+
+`send_smart_contract 2J3v9G2D9FAEjm3Khnj2W54ns9sZ6Zqgb4zkdHaP8zuTt5DY5c /home/onyr/Documents/code/massa/tic_tac_toe_front/build/website.wasm 1000000 0 0 0`: deploy smart contract
+
+`get_operations 6LKALebFTHjFCPngt4aBJgcUDTmPdgermh5b57S6PWpGhBVfq`: verify smart contract infos and check deployment.
+
+`get_filtered_sc_output_event caller_address=2J3v9G2D9FAEjm3Khnj2W54ns9sZ6Zqgb4zkdHaP8zuTt5DY5c`: 
+
+## Commands
+
+`npx massa-sc-create tictactoe-sc`: inside an already initialized project, create a new MASSA hello world project.
