@@ -6,12 +6,16 @@
 
 ## Install and set-up
 
-npm init
+> Set up the project from scratch (not using `package.json` file.
 
-npm install --save-dev @as-pect/cli massa-sc-std massa-sc-scripts
+`npm init`
 
-npx asinit .
+`npm install --save-dev @as-pect/cli massa-sc-std massa-sc-scripts`
 
-npx asp --init
+`npx asinit .`
+
+`npx asp --init`
 
 Compile our `helloworld.ts`: `npx massa-sc-scripts build-sc assembly/helloworld.ts`
+
+> If using this repository, just run `npm install` inside `hello_world/` subdirectory.
