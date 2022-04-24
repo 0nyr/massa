@@ -62,6 +62,7 @@ function Square(props: any) {
   return (
     <button className="square" onClick={props.onClick} id={`square_${props.squareIndex}`}>
       {props.value}
+      {props.ascii}
     </button>
   );
 }
@@ -74,7 +75,7 @@ class Board extends React.Component<any, any> {
     this.state = {
       squares: Array(9).fill(null),
       player: [0, 0],
-      matrice: [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
+      board: [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
     };
   }
 
@@ -87,16 +88,6 @@ class Board extends React.Component<any, any> {
   }
 
   refresh() {
-    web3Client.smartContracts().getDatastoreEntry(sc_addr, "board").then((res) => {
-      if (res) {
-        let boardMatrix = JSON.parse(res.candidate);
-        let squares = Array(9).fill(null);
-        this.setState({
-          squares: squares,
-          matrice: boardMatrix
-        });
-      }
-    });
     web3Client.smartContracts().getDatastoreEntry(sc_addr, "player").then((res) => {
       if (res) {
         let playerData = JSON.parse(res.candidate);
@@ -105,6 +96,17 @@ class Board extends React.Component<any, any> {
         });
       }
     });
+    web3Client.smartContracts().getDatastoreEntry(sc_addr, "board").then((res) => {
+      if (res) {
+        let boardMatrix = JSON.parse(res.candidate);
+        let squares = Array(9).fill(null);
+        this.setState({
+          squares: squares,
+          board: boardMatrix
+        });
+      }
+    });
+
   }
 
   handleClick(i: number) {
@@ -166,11 +168,19 @@ class Board extends React.Component<any, any> {
   }
 
   renderSquare(i: number) {
+    let currentAscii = ""
+    if (
+      this.state.player[0] * this.state.board[0].length + this.state.player[1] == i
+    ) {
+      currentAscii = "@"
+    }
+
     return (
       <Square
         value={this.state.squares[i]}
         // onClick={() => this.handleClick(i)}
         squareIndex={i}
+        ascii={currentAscii}
       />
     );
   }
@@ -208,16 +218,16 @@ class Board extends React.Component<any, any> {
 
 
   render() {
-    console.log("test")
+    console.log(`Player coord: ${this.state.player[0]}, ${this.state.player[1]}`)
     return (
       <div>
-        {this.MakeTableTotal(this.state.matrice.length, this.state.matrice[0].length)}
+        {this.MakeTableTotal(this.state.board.length, this.state.board[0].length)}
         <div className="restart-button">
           <button onClick={() => this.reset()}>Restart Game</button>
-          <button onClick={() => this.handleClick(1)}>Up</button>
-          <button onClick={() => this.handleClick(2)}>Left</button>
-          <button onClick={() => this.handleClick(4)}>Right</button>
-          <button onClick={() => this.handleClick(3)}>Down</button>
+          <button onClick={() => this.handleClick(2)}>Up</button>
+          <button onClick={() => this.handleClick(1)}>Left</button>
+          <button onClick={() => this.handleClick(3)}>Right</button>
+          <button onClick={() => this.handleClick(4)}>Down</button>
         </div>
       </div>
     );
