@@ -37,7 +37,7 @@ export function initializeLevel(_args: string): void {
             board[i].push(" ");
         }   
     }
- 
+
     // save empty board
     Storage.set_data("board", JSON.stringify(board));
     //generate_event("board initialized: " + JSON.stringify(board));
@@ -63,10 +63,6 @@ export function getBoard(): string {
 export class MoveArgs {
     // 0: STAY, 1: UP, 2: LEFT, 3: DOWN, 4: RIGHT
     direction: u32 = 0;
-}
-
-export function movePlayer(_args: string): void {
-    
 }
 
 
@@ -133,9 +129,6 @@ export function move(_args: string): void {
             generate_event("player cannot move right");
         }
     }
-
-    // save player coordinates
-    Storage.set_data("player", JSON.stringify(player));
 
     generate_event(
         "Current player coordinates: " + 

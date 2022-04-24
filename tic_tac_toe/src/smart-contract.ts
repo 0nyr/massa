@@ -87,4 +87,3 @@ function _checkWin(player: string): void {
         Storage.set_data("gameWinner", "draw");
     }
 }
-

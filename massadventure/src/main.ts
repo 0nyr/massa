@@ -27,7 +27,7 @@ export function main(_args: string): i32 {
     );
 
     // call smart contract to initialize game
-    print(call(sc_address, "helloworld", "World", 0));
+    //print(call(sc_address, "initializeLevel", "", 0));
     print(`${Context.get_call_stack()[0]}`)
 
     return 0;
