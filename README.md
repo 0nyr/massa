@@ -6,7 +6,7 @@ As explained by the MASSA doc: "Massa is a truly decentralized blockchain contro
 
 [MASSA doc, latest](https://massa.readthedocs.io/en/latest/index.html)
 
-##### hackaton
+##### hackaton kryptosphère ( Massadventure)
 
 [doc hackaton](https://massa.readthedocs.io/en/latest/hackathon.html)
 
