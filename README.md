@@ -40,3 +40,10 @@ Once the necessary tooling have been installed, install MASSA specific libs. We 
 ## Commands
 
 `npx massa-sc-create tictactoe-sc`: inside an already initialized project, create a new MASSA hello world project.
+
+
+## DNS
+
+```
+./massa-client call_smart_contract 2J3v9G2D9FAEjm3Khnj2W54ns9sZ6Zqgb4zkdHaP8zuTt5DY5c 2R4zRvGc5GcX4eCWrM5zsboFKodCUuWa7X8biiDBQMoLohwH4N setResolver '{"name": "massadventure", "address": "2J3v9G2D9FAEjm3Khnj2W54ns9sZ6Zqgb4zkdHaP8zuTt5DY5c"}' 1000000000 0 0 0
+```

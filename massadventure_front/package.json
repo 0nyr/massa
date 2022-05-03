@@ -68,12 +68,6 @@
     "eject": "react-scripts eject",
     "fix-lint": "tslint -c tslint.json '**/*.ts' --fix"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       "chrome >= 67",
